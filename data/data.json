@@ -17,6 +17,47 @@
         "title": "さん",
         "description": "ううう",
         "imageURL": "https://biwako.io/wp-content/uploads/2016/06/2016-06-26-18.22.24-300x300.jpg"
+    },{
+        "title": "くず鉄",
+        "description": "",
+        "imageURL": "https://raw.githubusercontent.com/KamataRyo/leaflet-lesson-datastore/master/images/1.jpg",
+        "lat":"34.280433334",
+        "lng":"135.148286111"
+    },{
+        "title": "PLUG",
+        "description": "",
+        "imageURL": "https://raw.githubusercontent.com/KamataRyo/leaflet-lesson-datastore/master/images/2.jpg",
+        "lat":"34.233788889",
+        "lng":"135.172530556"
+    },{
+        "title": "蝟集",
+        "description": "",
+        "imageURL": "https://raw.githubusercontent.com/KamataRyo/leaflet-lesson-datastore/master/images/3.jpg",
+        "lat":"34.238536111",
+        "lng":"135.153594444"
+    },{
+        "title": "わに石",
+        "description": "",
+        "imageURL": "https://raw.githubusercontent.com/KamataRyo/leaflet-lesson-datastore/master/images/4.jpg",
+        "lat":"35.422275",
+        "lng":"136.372758334"
+    },{
+        "title": "シュレーゲルアオガエル",
+        "description": "",
+        "imageURL": "https://raw.githubusercontent.com/KamataRyo/leaflet-lesson-datastore/master/images/5.jpg",
+        "lat":"35.408552778",
+        "lng":"136.331938889"
+    },{
+        "title": "DUPLICATED",
+        "description": "",
+        "imageURL": "https://raw.githubusercontent.com/KamataRyo/leaflet-lesson-datastore/master/images/6.jpg",
+        "lat":"34.238536111",
+        "lng":"135.153594444"
+    },{
+        "title": "PLUG",
+        "description": "",
+        "imageURL": "https://raw.githubusercontent.com/KamataRyo/leaflet-lesson-datastore/master/images/7.jpg",
+        "lat":"34.233758333",
+        "lng":"135.172608334"
     }
-
 ]
