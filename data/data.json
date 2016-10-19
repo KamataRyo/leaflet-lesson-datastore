@@ -1,0 +1,22 @@
+[
+    {
+        "lat": 35.1,
+        "lng": 133.2,
+        "title": "いち",
+        "description": "あああ",
+        "imageURL": "https://biwako.io/wp-content/uploads/2016/06/2016-06-26-19.03.35-HDR.jpg"
+    },{
+        "lat": 35.2,
+        "lng": 133.21,
+        "title": "に",
+        "description": "いいい",
+        "imageURL": "https://biwako.io/wp-content/uploads/2016/06/2016-06-26-18.14.06.jpg"
+    },{
+        "lat": 35.2,
+        "lng": 134.4,
+        "title": "さん",
+        "description": "ううう",
+        "imageURL": "https://biwako.io/wp-content/uploads/2016/06/2016-06-26-18.22.24-300x300.jpg"
+    }
+
+]
