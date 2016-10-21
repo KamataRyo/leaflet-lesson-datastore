@@ -1,0 +1,21 @@
+language: node_js
+node_js:
+- '6'
+branches:
+  only:
+  - master
+before_script:
+- npm install
+- npm run build
+after_success:
+- rm .gitignore
+- rm .travis.yml
+- rm -r bin/
+- rm -r src/
+- rm package.json
+- curl https://raw.githubusercontent.com/KamataRyo/travis-sctipts-collection/master/deploy-gh-pages.sh | bash
+env:
+  global:
+  - NODE_VERSION_TO_DEPLOY: '6'
+  - GH_REF: github.com/KamataRyo/leaflet-lesson-datastore
+  - secure: "hmC3taVHGcSnMoKSPV+SRrDGKgxDtKQk9Z7S4rT9PxcXtBNQ+drH3ASMyywW5BsRWhpH0f8X/Kciz77QOvrhKmPH/Z9XAEonlanhjdwbd/I25L9yUJy5g4OKTmN+k/VaHBSUvHw4viGA/FJzvF+OO9IWFC7H3jmAUxKSr6/qbXfgBOfL9OSAsgpFn+CwmBHvpZkhCNx+GbFxKM+uqmOR2BKV2tWKUW4e3nIYvDqw+ufrJlHDjSJXtYm4MdWl6UTNQ1pZZKcSLGvHuVmykybuHkWd7oI2mXoHqXv1ViU6MBrZhGNTFt5Xp2O9pbB2h2XgU9aAAafrk8/pcPxgLVtOAxGFOXLaPsJc+hQRkTjPhqsJrL4BGbZ4ppfwyAEUsBFO+l8fTc+fzl4DG5iKSTvtyB/Or+7D2ZD2087TnvcpSfPPt8K5FsqEVENUMGZn0R1KNh2xVHh0HRlf2rg8M3YhZZcc79jQDu6Dx0ew/9qfPGxKtXFSjL7RITnQguqlzTGfqL9s+0n3NJYgL8y/R4faLALh0oDjiuG0RXwZvKs4P2N0nIWNqNAgMdXZ/geL9QgUIBj+3XFDPYMzVHAd8PDFSScPrfmy0fTz6mIxC2cY96Iq8cb6ChEANyjtyQiZlxVCdZVUuTTW+3E+hEY1SnM61noJZFGrTy9uIc7j4/0jPL4="
