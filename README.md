@@ -10,11 +10,6 @@ You can request data addition to the map([https://kamataryo.github.io/leaflet-le
 
 ### Orders / 手順
 
-1. Folk this repository.
-1. Add images to `src` directory
-1. Make Pull Request to this repository
-
-
-1. このリポジトリをフォーク
-1. `src`ディレクトリに追加
-1. Pull Requestを作成
+1. Folk this repository / このリポジトリをフォーク
+1. Add images to `src` directory / `src`ディレクトリに画像を追加
+1. Make Pull Request to this repository / Pull Requestを作成
