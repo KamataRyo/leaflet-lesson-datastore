@@ -12,6 +12,8 @@ after_success:
 - rm .travis.yml
 - rm -r bin/
 - rm -r src/
+- rm -r node_modules/
+- rm dest/.gitkeep
 - rm package.json
 - curl https://raw.githubusercontent.com/KamataRyo/travis-sctipts-collection/master/deploy-gh-pages.sh | bash
 env:
