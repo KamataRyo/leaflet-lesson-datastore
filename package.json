@@ -1,0 +1,23 @@
+{
+  "name": "leaflet-lesson-datastore",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "node ./bin/scafold.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/KamataRyo/leaflet-lesson-datastore.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/KamataRyo/leaflet-lesson-datastore/issues"
+  },
+  "homepage": "https://github.com/KamataRyo/leaflet-lesson-datastore#readme",
+  "devDependencies": {
+    "exif": "^0.6.0",
+    "request": "^2.75.0"
+  }
+}
