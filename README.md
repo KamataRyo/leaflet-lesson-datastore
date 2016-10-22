@@ -13,3 +13,4 @@ You can request data addition to the map([https://kamataryo.github.io/leaflet-le
 1. Folk this repository / このリポジトリをフォーク
 1. Add images to `src` directory / `src`ディレクトリに画像を追加
 1. Make Pull Request to this repository / Pull Requestを作成
+1. Wait a minute / 少し待つ
