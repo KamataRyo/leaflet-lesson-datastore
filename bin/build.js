@@ -69,7 +69,7 @@ const build = () => new Promise((resolved, rejected) => {
 
         if (gpsAvailable) {
           const result = DMS2Decimal(exif.gps)
-          result.imageURL = `https://kamataryo.github.io/dest/${counter}.jpg`
+          result.imageURL = `https://kamataryo.github.io/leaflet-lesson-datastore/dest/${counter}.jpg`
           // file copy
           fs.createReadStream(`${src}/${file}`)
             .pipe(fs.createWriteStream(`${dest}/${counter}.jpg`))
