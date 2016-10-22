@@ -75,12 +75,20 @@ const build = () => new Promise((resolved, rejected) => {
 
         // count finished
         if ((counter += 1) === files.length) {
-          results.aborted = aborted
           // write result
           const ws = fs.createWriteStream(`${dest}/list.json`)
           ws.write(JSON.stringify(results))
           ws.on('close', () => {
             console.log(`generated '${dest}/list.json'.`)
+            resolved()
+          })
+          ws.end()
+
+          // write aborted
+          const ws = fs.createWriteStream(`${dest}/aborted.json`)
+          ws.write(JSON.stringify(aborted))
+          ws.on('close', () => {
+            console.log(`generated '${dest}/aborted.json'.`)
             resolved()
           })
           ws.end()
