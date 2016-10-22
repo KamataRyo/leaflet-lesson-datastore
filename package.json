@@ -17,7 +17,6 @@
   },
   "homepage": "https://github.com/KamataRyo/leaflet-lesson-datastore#readme",
   "devDependencies": {
-    "exif": "^0.6.0",
-    "request": "^2.75.0"
+    "exif": "^0.6.0"
   }
 }

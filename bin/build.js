@@ -3,6 +3,7 @@ const ExifImage = require('exif').ExifImage
 
 const dest = `${__dirname}/../dest`
 const src  = `${__dirname}/../src`
+
 const DMS2Decimal = ({GPSLatitude, GPSLongitude, GPSLatitudeRef, GPSLongitudeRef}) => {
   return {
     lat: (GPSLatitudeRef  === 'N' ? 1 : -1) *
@@ -20,31 +21,37 @@ const clean = () => new Promise((resolved, rejected) => {
 
     if (err) rejected(err)
 
-    files.forEach((file) => {
-      if (file !== '.gitkeep') {
-        fs.unlink(`${dest}/${file}`, (err) => {
+    if (files.length === 1) {
+      resolved()
+    } else {
+      files.forEach((file) => {
+        if (file !== '.gitkeep') {
+          fs.unlink(`${dest}/${file}`, (err) => {
 
-          if (err) rejected(err)
+            if (err) rejected(err)
 
-          // count finished
-          if ((counter += 1) === files.length) {
-            resolved()
-          }
-        })
-      }
-    })
+            counter += 1
+            // count finished
+            if ((counter) === files.length - 1) {
+              resolved()
+            }
+          })
+        }
+      })
+    }
   })
 
 })
 
 const build = () => new Promise((resolved, rejected) => {
 
+  const successed = []
+  const aborted = []
+
   fs.readdir(`${src}/`, (err, files) => {
 
     if (err) rejected(err)
 
-    const results = []
-    const aborted = []
     var counter = 0
 
     files.forEach((file) => {
@@ -67,35 +74,34 @@ const build = () => new Promise((resolved, rejected) => {
           fs.createReadStream(`${src}/${file}`)
             .pipe(fs.createWriteStream(`${dest}/${counter}.jpg`))
 
-          results.push(result)
+          successed.push(result)
 
         } else {
           aborted.push({file, reason: 'No GPS information.'})
         }
 
+        counter += 1
         // count finished
-        if ((counter += 1) === files.length) {
-          // write result
-          const ws = fs.createWriteStream(`${dest}/list.json`)
-          ws.write(JSON.stringify(results))
-          ws.on('close', () => {
-            console.log(`generated '${dest}/list.json'.`)
-            resolved()
-          })
-          ws.end()
+        if (counter === files.length) {
 
-          // write aborted
-          const ws = fs.createWriteStream(`${dest}/aborted.json`)
-          ws.write(JSON.stringify(aborted))
-          ws.on('close', () => {
-            console.log(`generated '${dest}/aborted.json'.`)
-            resolved()
+          const ws1 = fs.createWriteStream(`${dest}/list.json`)
+          ws1.write(JSON.stringify(successed))
+          ws1.on('close', () => {
+            console.log(`generated '${dest}/list.json'.`)
           })
-          ws.end()
+          ws1.end()
+
+          const ws2 = fs.createWriteStream(`${dest}/aborted.json`)
+          ws2.write(JSON.stringify(aborted))
+          ws2.on('close', () => {
+            console.log(`generated '${dest}/aborted.json'.`)
+          })
+          ws2.end()
         }
       })
     })
   })
 })
 
-clean().then(build())
+
+clean().then(build)
